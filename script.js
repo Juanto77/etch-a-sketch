@@ -1,37 +1,37 @@
-function makeGrid(number){
-    const gridContainer = document.getElementById('game');
+const gridContainer = document.getElementById('game');
+let number = 280;
 
+//Ask user
+
+//Create a grid of divs
+function makeGrid(number){
     for (let i = 0; i < number; i++) {
         let row = document.createElement('div')
         gridContainer.appendChild(row);
         }
+};
+
+// Build a nodelist of the Divs
+gameDiv = () => gridContainer.querySelectorAll('div');
+
+//Color the Grid
+gridContainer.addEventListener('mouseover', function(hover){
+    hover.target.classList.add('onHover');
+});
+
+//Clear Div Cells
+function resetDivs(){
+    gameDiv().forEach(function(e){
+        e.classList.remove('onHover');
+    })
+
+}
+
+//Clear the Grid of all Divs
+function reset(){
+    if (gridContainer.hasChildNodes()){
+        while (gridContainer.firstChild) {
+            gridContainer.removeChild(gridContainer.firstChild);
+        }
     }
-
-makeGrid();
-
-
-//First go around: https://www.youtube.com/watch?v=23AGsRkghjo
-
-// function makeGrid() {
-//     let grid = document.getElementById('game');
-
-//     for (let i = 0; i < 16; i++){
-//         let row = document.createElement('row');
-//         row.id = 'row' + i;
-
-//         grid.appendChild(row);
-//         let cell = document.getElementById ('row' + i);
-
-        // for (let j = 0; j < 16; j++){
-        //     let box = document.createElement('box');
-
-        //     cell.appendChild(box);
-//         }
-//     }
-// }
-
-// for (let j = 0; j < 16; j++){
-//     let box = document.createElement('div');
-//     box.className = 'box'
-
-//     row.appendChild(box);
+};

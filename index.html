@@ -10,7 +10,11 @@
 </head>
 <body>
     <div class="header">
-        <button class="reset">Reset</button>
+        <div class="buttons">
+            <button id="create-grid" onclick="makeGrid(number)">Make a Grid</button>
+            <button id="reset-divs" onclick="resetDivs()">Reset Divs</button>
+            <button id="reset-grid" onclick="reset()">Reset</button>
+        </div>
     </div>
     <div class="container">
         <div id="game"></div>

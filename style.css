@@ -1,5 +1,8 @@
-body {
-  max-width: auto;
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 .header,
@@ -8,32 +11,28 @@ body {
   justify-content: center;
 }
 
-.header .reset {
-  margin-bottom: 25px;
+.container {
+  align-items: center;
+}
+
+.header .buttons {
+  margin: 25px 0 25px 0;
 }
 
 #game {
   display: inline-grid;
-  width: 1280px;
-  height: 960px;
+  width: 1000px;
+  height: 500px;
   background-color: bisque;
-  grid-template-columns: repeat(24, auto);
+  grid-template-columns: repeat(20, auto);
 }
 
 #game > div {
   height: auto;
   width: auto;
-}
-/*
-.box {
-  display: inline-grid;
   border: 1px solid black;
-  height: 58px;
-  width: 58px;
-  margin: 0;
-  padding: 0;
-} */
+}
 
-#game > div:hover {
+.onHover {
   background-color: black;
 }
