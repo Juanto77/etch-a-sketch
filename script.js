@@ -1,5 +1,5 @@
 const gridContainer = document.getElementById('game');
-let number = 280;
+let number = 10;
 
 //Ask user
 
@@ -8,7 +8,14 @@ function makeGrid(number){
     for (let i = 0; i < number; i++) {
         let row = document.createElement('div')
         gridContainer.appendChild(row);
+
+        for (let j = 0; j < number; j++){
+        let cell = document.createElement('div')
+        row.appendChild(cell);
         }
+
+        }
+
 };
 
 // Build a nodelist of the Divs

@@ -19,20 +19,35 @@ html {
   margin: 25px 0 25px 0;
 }
 
-#game {
-  display: inline-grid;
+/* #game {
+  display: grid;
   width: 1000px;
   height: 500px;
   background-color: bisque;
-  grid-template-columns: repeat(20, auto);
+  grid-template-columns: repeat(20, auto)
+} */
+
+#game {
+  display: flex;
+  width: 500px;
+  height: 500px;
 }
 
 #game > div {
+  display: block;
+  flex-direction: column;
   height: auto;
   width: auto;
   border: 1px solid black;
 }
 
+#game > div > div {
+  display: inline-block;
+  flex-direction: row;
+  height: auto;
+  width: auto;
+  border: 1px solid black;
+}
 .onHover {
   background-color: black;
 }
