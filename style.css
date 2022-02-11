@@ -19,33 +19,21 @@ html {
   margin: 25px 0 25px 0;
 }
 
-/* #game {
-  display: grid;
-  width: 1000px;
-  height: 500px;
-  background-color: bisque;
-  grid-template-columns: repeat(20, auto)
-} */
-
 #game {
   display: flex;
-  width: 500px;
-  height: 500px;
+  width: 960px;
+  height: 960px;
+  background-color: bisque;
 }
 
-#game > div {
-  display: block;
-  flex-direction: column;
-  height: auto;
+#game div,
+#game div div {
   width: auto;
-  border: 1px solid black;
+  height: auto;
+  box-sizing: border-box;
 }
 
 #game > div > div {
-  display: inline-block;
-  flex-direction: row;
-  height: auto;
-  width: auto;
   border: 1px solid black;
 }
 .onHover {
