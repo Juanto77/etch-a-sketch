@@ -1,10 +1,13 @@
+let number;
 const gridContainer = document.getElementById("game");
-let number = userInput();
-size = 960 / number;
 
-function userInput() {
-  let input = prompt("how many sides?", "");
-  return input;
+// Build a nodelist of the Divs
+gameDiv = () => gridContainer.querySelectorAll("div");
+
+// Sketch it all out
+function sketch() {
+  userInput();
+  makeGrid(number);
 }
 
 //Create a grid of divs
@@ -21,40 +24,46 @@ function makeGrid(number) {
   setSize();
 }
 
-// Build a nodelist of the Divs
-gameDiv = () => gridContainer.querySelectorAll("div");
+//user grid set to max of 100
+function userInput() {
+  number = prompt("how many sides", "");
+  if (number <= 100) {
+    return number;
+  } else {
+    alert("Pick a number between 1-100");
+    userInput();
+  }
+}
 
-//Color the Grid
+//Color the Grid on Hover
 gridContainer.addEventListener("mouseover", function (hover) {
   hover.target.classList.add("onHover");
 });
 
 //Set the size of the grid
 function setSize() {
+  let size = 960 / number;
   gameDiv().forEach(function (e) {
     e.style.height = size + "px";
     e.style.width = size + "px";
   });
 }
 
-//Clear Div Cells
+//Clear current grid
 function resetDivs() {
   gameDiv().forEach(function (e) {
     e.classList.remove("onHover");
   });
 }
 
-//Clear the Grid of all Divs
+//Clear grid & resize new grid
 function reset() {
   if (gridContainer.hasChildNodes()) {
     while (gridContainer.firstChild) {
       gridContainer.removeChild(gridContainer.firstChild);
     }
-    gameDiv().forEach(function (e) {
-      e.style.height = "";
-      e.style.width = "";
-    });
   }
+  sketch();
 }
 
-makeGrid(number);
+sketch();
